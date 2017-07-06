@@ -37,7 +37,11 @@ h2 {
 
 .author-text {
     font-size: 22px;
+    float:left;
+    margin-top: 30px;
+    margin-left: 10px
 }
+
 .container {
     width: 1140px;
     margin: 20px auto 0 auto
@@ -46,7 +50,8 @@ h2 {
 .blog-post {
     width: 75%;
     float: left;
-    padding-right: 30px
+    padding-right: 30px;
+    position: relative;
 }
 
 .other-posts {
@@ -57,4 +62,26 @@ h2 {
 .author-box {
     border-top: 1px solid #808080;
     padding-top: 20px;
+}
+
+.other {
+    margin-bottom: 40px;
+}
+
+.author-box img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    float: left;
+}
+
+.blog-post img {
+    height: 150px;
+    width: auto;
+}
+
+.date {
+    position: absolute;
+    top: 0;
+    right: 30px;
 }
