@@ -7,6 +7,7 @@
 
 $(document).ready(function () {
 
+    /* For the stick navigation */
     $('.js--section-features').waypoint(function (direction) {
         if (direction == "down") {
             $('nav').addClass('sticky');
@@ -14,7 +15,30 @@ $(document).ready(function () {
             $('nav').removeClass('sticky');
         }
     }, {
-        offset: '60px' /* to show 60 before hit the nav */
+            offset: '60px' /* to show 60 before hit the nav */
+        });
+
+    /* Scroll on buttons */
+    $('.js--scroll-to-plans').on('click', function () {
+        $('html body').animate({ scrollTop: $('.js--section-plans').offset().top }, 1000);
     });
 
+    $('.js--scroll-to-start').on('click', function () {
+        $('html body').animate({ scrollTop: $('.js--section-features').offset().top }, 1000);
+    });
+
+    /* Navigation scroll */
+    $(function () {
+        $("a[href*='#']:not([href='#'])").on('click', function () {
+            console.log('clicking....');
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({ scrollTop: target.offset().top }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
 });
