@@ -83,4 +83,21 @@ $(document).ready(function () {
             $icon.addClass('ion-navicon-round');
         }
     });
+
+    /* Maps */
+    var map = new GMaps({
+        div: '.map',
+        lat: 38.7436214,
+        lng: -9.05,
+        zoom: 12
+    });
+
+    map.addMarker({
+        lat: 38.7436214,
+        lng: -9.1952231,
+        title: 'Lima',
+        infoWindow: {
+            content: '<p>Our Lisbon HQ</p>'
+        }
+    });
 });
