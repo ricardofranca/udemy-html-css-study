@@ -66,4 +66,21 @@ $(document).ready(function () {
     }, {
             offset: '50%'
         });
+
+    /* Mobile navigation */
+    $('.js--nav-icon').on('click', function () {
+        var $nav = $('.js--main-nav');
+        var $icon = $('.js--nav-icon i');
+
+        $nav.slideToggle(200); //milliseconds
+
+        //$icon.toggleclass('icon-close-round').toggleclass('ion-navicon-round');
+        if ($icon.hasClass('ion-navicon-round')) {
+            $icon.addClass('ion-close-round')
+            $icon.removeClass('ion-navicon-round');
+        } else {
+            $icon.removeClass('ion-close-round')
+            $icon.addClass('ion-navicon-round');
+        }
+    });
 });
